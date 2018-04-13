@@ -3,10 +3,10 @@ import java.util.Collections;
 import java.util.Random;
 
 public class Values {
-    public static final String DOCTORS_HOSPITAL_QUEUE_NAME = "a";
-    public static final String EXCHANGE_DOCTORS_TECHNICIAN = "b";
-    public static final String ADMIN_LOG_QUEUE_NAME = "h";
-    public static final String ADMIN_INFO_EXCHANGE = "dsdasdfdfddfsfsdfsfhd";
+    public static final String DOCTORS_HOSPITAL_QUEUE_NAME = "dh";
+    public static final String EXCHANGE_DOCTORS_TECHNICIAN = "dt";
+    public static final String ADMIN_LOG_QUEUE_NAME = "al";
+    public static final String ADMIN_INFO_EXCHANGE = "ai";
 
     private static final String[] bodyParts = {"knee", "hip", "elbow"};
 

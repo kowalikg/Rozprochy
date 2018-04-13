@@ -18,6 +18,7 @@ public class Doctor {
 
         initialiseHospitalDoctorsQueue(channel);
         String doctorsTechnicianQueueName = generateDoctorsTechniciansExchange(channel, id);
+        System.out.println(doctorsTechnicianQueueName);
 
         Consumer consumer = new DefaultConsumer(channel) {
             @Override
@@ -34,7 +35,7 @@ public class Doctor {
                 else if (parts[0].equals("done")){
                     System.out.println("Received from technician: " + message);
                 }
-                else if (parts[0].equals("admin")) System.out.println("Received from admin: " + message);
+                else if (parts[0].equals("admin")) System.out.println("Received from " + message);
             }
         };
 
@@ -66,6 +67,7 @@ public class Doctor {
         channel.exchangeDeclare(Values.EXCHANGE_DOCTORS_TECHNICIAN, BuiltinExchangeType.DIRECT);
         String doctorsTechnicianQueueName = channel.queueDeclare().getQueue();
         channel.queueBind(doctorsTechnicianQueueName, Values.EXCHANGE_DOCTORS_TECHNICIAN, String.valueOf(id));
+        System.out.println("created doctor queue" + doctorsTechnicianQueueName);
         return doctorsTechnicianQueueName;
     }
 
@@ -85,6 +87,7 @@ public class Doctor {
 
         String queueName = channel.queueDeclare().getQueue();
         channel.queueBind(queueName, Values.ADMIN_INFO_EXCHANGE, "");
+        System.out.println("created admin queue" + queueName);
         return queueName;
     }
 }

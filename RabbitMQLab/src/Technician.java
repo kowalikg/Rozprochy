@@ -64,6 +64,7 @@ public class Technician {
 
         String queueName = channel.queueDeclare().getQueue();
         channel.queueBind(queueName, Values.ADMIN_INFO_EXCHANGE, "");
+        System.out.println("created admin queue" + queueName);
         return queueName;
     }
 

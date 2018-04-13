@@ -1,7 +1,6 @@
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.concurrent.TimeoutException;
 
 public class Admin {
@@ -39,7 +38,7 @@ public class Admin {
     }
 
     private static void registerConsumption(Channel channel, Consumer consumer) throws IOException {
-        channel.basicConsume(Values.ADMIN_LOG_QUEUE_NAME, true, consumer);
+        channel.basicConsume(Values.ADMIN_LOG_QUEUE_NAME, false, consumer);
     }
 
     private static void initialiseAdminInfoExchange(Channel channel) throws IOException {
