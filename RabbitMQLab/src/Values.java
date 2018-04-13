@@ -3,8 +3,11 @@ import java.util.Collections;
 import java.util.Random;
 
 public class Values {
-    public static final String DOCTORS_RECIEVER_QUEUE_NAME = "doctorReceiverzx";
-    public static final String EXCHANGE_DOCTORS_TECHNICIAN = "doctorSenderx";
+    public static final String DOCTORS_HOSPITAL_QUEUE_NAME = "a";
+    public static final String EXCHANGE_DOCTORS_TECHNICIAN = "b";
+    public static final String ADMIN_LOG_QUEUE_NAME = "h";
+    public static final String ADMIN_INFO_EXCHANGE = "dsdasdfdfddfsfsdfsfhd";
+
     private static final String[] bodyParts = {"knee", "hip", "elbow"};
 
     private static final String[] firstNames = {
@@ -32,7 +35,6 @@ public class Values {
             "Nielsen","England","Petersen","Vaughan","Brown","Clarke","Beach","Gilliam","Carrillo",
             "Mullins","Nguyen","Glass","Humphrey","England","Reyes","Glass","Pacheco","Gallagher"
     };
-    public static final String EXCHANGE_DOCTORS_TECHNICIAN_SENDER = "techniksendingx";
 
     public static String[] generateRandomParts(){
         Collections.shuffle(Arrays.asList(bodyParts));
